@@ -39,10 +39,21 @@ async function editListing(req,res) {
   }
 }
 
+async function deleteListing(req, res) {
+  try {
+    const listing = await Listing.findByPk(req.params.listingId)
+    await listing.destroy()
+    res.status(200).json(listing)
+  } catch (error) {
+    res.status(500).json({err: error})
+  }
+}
+
 
 module.exports = {
   createListing,
   index,
   show,
-  editListing
+  editListing,
+  deleteListing
 }
