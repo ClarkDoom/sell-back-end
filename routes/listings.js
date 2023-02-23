@@ -9,8 +9,10 @@ const { decodeUserFromToken, checkAuth } = middleware
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
+router.get('/', checkAuth, listingsCtrl.index)
+router.get('/:listingId', checkAuth, listingsCtrl.show)
+router.patch('/:listingId', checkAuth,listingsCtrl.editListing)
 router.post('/', checkAuth, listingsCtrl.createListing)
 
 module.exports = router
 
-// UPDATE FOR LISTING
