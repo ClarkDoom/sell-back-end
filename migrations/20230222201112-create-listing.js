@@ -9,40 +9,33 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-
       itemName: {
         type: Sequelize.STRING
       },
-
       photos: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
-
       description: {
         type: Sequelize.STRING
       },
-
       condition: {
         type: Sequelize.ENUM('Like New', 'Fair', 'Poor'),
         defaultValue: 'Poor'
       },
-
       openToTrade: {
         type: Sequelize.BOOLEAN
       },
-
       price: {
         type: Sequelize.INTEGER
       },
-
       profileId: {
         type: Sequelize.INTEGER,
-				allowNull: false,
+        allowNull: false,
         onDelete: 'CASCADE',
         references: {
           model: 'Profiles',
           key: 'id'
-        },
+        }
       },
       createdAt: {
         allowNull: false,
@@ -53,7 +46,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-      
+
     });
   },
   async down(queryInterface, Sequelize) {

@@ -28,4 +28,7 @@ async function addPhoto(req, res) {
   }
 }
 
+
+
+
 module.exports = { index, addPhoto }
