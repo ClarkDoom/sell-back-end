@@ -13,10 +13,11 @@ const index = async (req, res) => {
   }
 }
 
-async function show(req, res) {
+const show = async (req, res) => {
   try {
-    console.log("req.params.id", req.params.id)
-    const profile = await Profile.findByPk(req.params.id)
+    const profile = await Profile.findByPk(req.params.id, {
+      include: [{ model: Listing, as: "listings"}]
+    })
     res.json(profile)
     console.log("profile:", profile)
   } catch (error) {
