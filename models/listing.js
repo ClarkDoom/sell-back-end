@@ -24,6 +24,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.ENUM('Like New', 'Fair', 'Poor'),
       defaultValue: 'Poor'
     },
+    type: {
+      type: DataTypes.ENUM('Movie', 'Books', 'Music'),
+    },
     openToTrade: DataTypes.BOOLEAN,
     price: DataTypes.INTEGER,
     profileId: {
