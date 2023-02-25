@@ -11,9 +11,9 @@ const { decodeUserFromToken, checkAuth } = middleware
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, listingsCtrl.index)
 router.get('/:listingId', checkAuth, listingsCtrl.show)
-router.patch('/:listingId', checkAuth,listingsCtrl.editListing)
-router.post('/', checkAuth, listingsCtrl.createListing)
-router.delete('/:listingId', checkAuth, listingsCtrl.deleteListing)
+router.patch('/:listingId/edit', checkAuth,listingsCtrl.editListing)
+router.post('/:profileId/create', checkAuth, listingsCtrl.createListing)
+router.delete('/:listingId/delete', checkAuth, listingsCtrl.deleteListing)
 
 module.exports = router
 
