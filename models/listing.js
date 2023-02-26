@@ -37,7 +37,10 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Profiles',
         key: 'id'
       }
-  }
+    },
+    sold: {
+      type: DataTypes.BOOLEAN
+    }
   }, {
     sequelize,
     modelName: 'Listing',
