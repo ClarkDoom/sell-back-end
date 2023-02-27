@@ -14,6 +14,7 @@ router.get('/:listingId', checkAuth, listingsCtrl.show)
 router.patch('/:listingId/edit', checkAuth,listingsCtrl.editListing)
 router.post('/:profileId/create', checkAuth, listingsCtrl.createListing)
 router.delete('/:listingId/delete', checkAuth, listingsCtrl.deleteListing)
+router.put('/:listingId/add-photo', checkAuth, listingsCtrl.addPhoto)
 
 module.exports = router
 
